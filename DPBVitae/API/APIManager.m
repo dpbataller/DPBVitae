@@ -91,26 +91,45 @@
 
 - (void)getSkillsDataWithcompletionHandler:(skillsCompletionBlock)completionBlock {
 
-    NSDictionary *mobileSkillsDict = [self getDataFromJSONFIle:@"Skills"][@"skills"][@"mobile"];
-    NSDictionary *webSkillsDict = [self getDataFromJSONFIle:@"Skills"][@"skills"][@"web"];
-    NSDictionary *databasesSkillsDict = [self getDataFromJSONFIle:@"Skills"][@"skills"][@"databases"];
+    NSArray *mobileSkillsArray      = [SkillModel arrayOfModelsFromDictionaries:[self getDataFromJSONFIle:@"Skills"][@"skills"][@"mobile"]];
+
+    NSArray *webSkillsArray         = [SkillModel arrayOfModelsFromDictionaries:[self getDataFromJSONFIle:@"Skills"][@"skills"][@"web"]];
     
-    NSMutableArray *mutableArray;
-    
+    NSArray *databasesSkillsArray   = [SkillModel arrayOfModelsFromDictionaries:[self getDataFromJSONFIle:@"Skills"][@"skills"][@"databases"]];
+
     NSError *error;
     
-    if (mobileSkillsDict) {
-        SkillModel *mobileModel = [[SkillModel alloc] initWithDictionary:mobileSkillsDict error:&error];
-        SkillModel *webModel = [[SkillModel alloc] initWithDictionary:webSkillsDict error:&error];
-        SkillModel *databaselModel = [[SkillModel alloc] initWithDictionary:databasesSkillsDict error:&error];
+    if (mobileSkillsArray && webSkillsArray && databasesSkillsArray) {
+        NSDictionary *completeDict = @{
+                                       @"mobile"    : mobileSkillsArray,
+                                       @"web"       : webSkillsArray,
+                                       @"databases" : databasesSkillsArray
+        };
         
-        mutableArray = [NSMutableArray arrayWithObjects:mobileModel,webModel,databaselModel, nil];
-        
-        completionBlock(mutableArray,nil);
+        completionBlock(completeDict,nil);
     }else {
         completionBlock(nil,error);
     }
    
+}
+
+- (void)getPortfolioWithcompletionHandler:(portfolioCompletionBlock)completionBlock {
+    
+    NSArray *mobilePorfolioModels   = [PortfolioModel arrayOfModelsFromDictionaries:[self getDataFromJSONFIle:@"Portfolio"][@"mobile"]];
+    NSArray *webPorfolioModels      = [PortfolioModel arrayOfModelsFromDictionaries:[self getDataFromJSONFIle:@"Portfolio"][@"web"]];
+    
+    NSDictionary *completeDict = @{
+                                   @"mobile"    : mobilePorfolioModels,
+                                   @"web"       : webPorfolioModels
+                                };
+
+    NSError *error;
+    
+    if (mobilePorfolioModels && webPorfolioModels) {
+        completionBlock(completeDict,nil);
+    }else {
+        completionBlock(nil,error);
+    }
 }
 
 @end

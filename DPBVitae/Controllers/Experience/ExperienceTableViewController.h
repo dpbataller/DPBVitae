@@ -10,4 +10,9 @@
 
 @interface ExperienceTableViewController : UITableViewController
 
+/**
+ *  Configura el aspecto del TableView así como inicializar los arrays que datos
+ */
+- (void)configureTableView;
+
 @end

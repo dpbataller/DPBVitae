@@ -7,31 +7,34 @@
 //
 
 #import "EducationTableViewController.h"
+#import "CustomEducationCell.h"
+#import "DetailEducationViewController.h"
+#import "EducationModel.h"
+#import "APIManager.h"
+
+static NSString *CellIdentifier = @"EducationCell";
 
 @interface EducationTableViewController ()
-
+@property(nonatomic,strong) NSDictionary *educationDict;
 @end
 
 @implementation EducationTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self configureTableView];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+
+    self.title = @"Formación Académica";
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:159/255.0 green:88/255.0 blue:199.0/255 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,78 +45,122 @@
 
 #pragma mark - Table view data source
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return self.educationDict.allKeys.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *titleHeader;
+    if (section == 0) {
+        titleHeader = @"Educación";
+    }else {
+        titleHeader = @"Formación Complementaria";
+    }
+    
+    return titleHeader;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSArray *items;
+    if (section == 0) {
+        items = self.educationDict[@"education"];
+    }else {
+        items = self.educationDict[@"additional"];
+    }
+
+    return items.count;
 }
 
-/*
+
+#pragma mark - Table view delegates
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.frame        = CGRectMake(20, 8, 320, 20);
+    titleLabel.font         = [UIFont fontWithName:@"Montserrat-Regular" size:16];
+    titleLabel.textColor    = [DPBUtils colorWithHexString:@"34495e" alpha:1.0];
+    titleLabel.text         = [self tableView:tableView titleForHeaderInSection:section];
+    
+    UIView *headerView = [[UIView alloc] init];
+    [headerView addSubview:titleLabel];
+    
+    return headerView;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    CustomEducationCell *cell = (CustomEducationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    EducationModel *model;
+    if (indexPath.section == 0) {
+        model = self.educationDict[@"education"][indexPath.row];
+    } else {
+        model = self.educationDict[@"additional"][indexPath.row];
+    }
+    
+    cell.dateLabel.text         = [NSString stringWithFormat:@"%@ - %@",model.startDate,model.endDate];
+    cell.courseLabel.text       = model.course;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    EducationModel *model;
+    
+    if (indexPath.section == 0) {
+        model = self.educationDict[@"education"][indexPath.row];
+    }else {
+        model = self.educationDict[@"additional"][indexPath.row];
+    }
+    
+    [self performSegueWithIdentifier:@"detailEducationInfo" sender:model];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - TableView Navigation Delegates
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailEducationInfo"]) {
+        
+        EducationModel *model = (EducationModel *)sender;
+        
+        DetailEducationViewController *detail = segue.destinationViewController;
+        
+        // Navigation Title
+        detail.title = model.course;
+        
+        // Detail Date String
+        detail.dateString = [NSString stringWithFormat:@"%@ - %@",model.startDate,model.endDate];
+        
+        // Detail Course String
+        detail.courseString = model.course;
+        
+        // Detail Description String
+        detail.descriptionString = model.courseDescription;
+        
+        // Detail Location String
+        detail.locationString = model.location;
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+#pragma mark - Custom Methods
+
+- (void)configureTableView {
+    // This will remove extra separators from tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    // Data sources
+    [[APIManager sharedAPIManager] getEducationDataWithcompletionHandler:^(NSDictionary *education, NSError *error) {
+        self.educationDict = education;
+    }];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

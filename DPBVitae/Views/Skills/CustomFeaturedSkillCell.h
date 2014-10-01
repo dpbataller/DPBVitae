@@ -10,4 +10,6 @@
 
 @interface CustomFeaturedSkillCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *featuredSkillDescription;
+
 @end

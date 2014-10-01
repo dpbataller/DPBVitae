@@ -22,6 +22,11 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    
+    // Language Label
+    self.languageLabel.textColor = [DPBUtils colorWithHexString:@"2c3e50" alpha:1.0];
+    self.languageLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

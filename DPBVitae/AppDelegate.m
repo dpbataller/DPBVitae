@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "APIManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    [self customizeTabbar];
+        
     return YES;
 }
 							
@@ -41,6 +45,64 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (void)showFonts {
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+}
+
+- (void)customizeTabbar {
+    // Create TabBarController and her tabBarItems
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    
+    
+    // Currículum Vitae Tab
+    UIImage *vitaeImage = [UIImage imageNamed:@"tab-vitae-unselected"];
+    UIImage *vitaeImageSel = [UIImage imageNamed:@"tab-vitae-selected"];
+    
+    vitaeImage = [vitaeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vitaeImageSel = [vitaeImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    tabBarItem1.title = @"a Vitae";
+    tabBarItem1.image = vitaeImage;
+    tabBarItem1.selectedImage = vitaeImageSel;
+    [tabBarItem1 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         [UIFont fontWithName:@"Montserrat-Regular" size:10.0f], NSFontAttributeName,
+                                         [DPBUtils colorWithHexString:@"34495e" alpha:1.0], NSForegroundColorAttributeName,nil]
+                               forState:UIControlStateSelected];
+    
+    
+    
+    
+    // Currículum Vitae Tab
+    UIImage *portFolioImage = [UIImage imageNamed:@"tab-portfolio-unselected"];
+    UIImage *portFolioImageSel = [UIImage imageNamed:@"tab-portfolio-selected"];
+    
+    portFolioImage = [portFolioImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    portFolioImageSel = [portFolioImageSel imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    tabBarItem2.title = @"Portfolio";
+    tabBarItem2.image = portFolioImage;
+    tabBarItem2.selectedImage = portFolioImageSel;
+    [tabBarItem2 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         [UIFont fontWithName:@"Montserrat-Regular" size:10.0f], NSFontAttributeName,
+                                         [DPBUtils colorWithHexString:@"34495e" alpha:1.0], NSForegroundColorAttributeName,nil]
+                               forState:UIControlStateSelected];
+
+    
 }
 
 @end

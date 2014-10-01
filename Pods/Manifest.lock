@@ -1,0 +1,19 @@
+PODS:
+  - HexColors (2.2.1)
+  - JSONModel (0.13.0)
+  - TSMessages (0.9.9):
+    - HexColors
+  - UINavigationBar+Addition (1.0.0)
+
+DEPENDENCIES:
+  - JSONModel (~> 0.13)
+  - TSMessages
+  - UINavigationBar+Addition
+
+SPEC CHECKSUMS:
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  JSONModel: 62ea96b49ea18a8b91ef89c249dba291d8601d82
+  TSMessages: 2999ef55e532378692e9d14d32da2bb60e285129
+  UINavigationBar+Addition: 75b1b709f000aa7de774df19d4fd9098ba939a51
+
+COCOAPODS: 0.32.1

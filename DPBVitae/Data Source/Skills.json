@@ -1,94 +1,129 @@
 {
-    "mobile" : {
-        "languages" : [
-            {
-               "name"       : "iOS",
-               "skillLevel" : "7 de 10"
-            }
-        ],
-        "experience"        : "3 años de experiencia desarrollando apps nativas para plataforma iOS",
-        "description"       : "aosdjfklasjdflkjasdlfjasdlkjfalskdjflkasjdlfkjasdlkjfalksdjflkasjdkfjalsdkjfla,aklsdjflksjdflkjsd",
-        "extra": [
-            {
-                "name" : "Licencia de desarrollo iOS",
-                "description" : "Soy desarrollador activo para la plataforma iOS de Apple teniendo en propiedad la licencia de desarrollador correspondiente."
-            },
-            {
-               "name" : "Licencia de desarrollo iOS",
-               "description" : "Soy desarrollador activo para la plataforma iOS teniendo en propiedad la licencia de desarrollador correspondiente."
-            }
-        ],
-        "projects" : [
-            {
-                "name"      : "Farmaribera | Farmacias de guardias",
-                "platform"  : ["iOS","Android"]
-            },
-            {
-               "name"      : "Awesom List | Todo Tasks",
-               "platform"  : ["iOS","Android"]
-            },
-            {
-               "name"      : "Avianvet",
-               "platform"  : ["iOS","Android"]
-            },
-            {
-               "name"      : "Cárcenas",
-               "platform"  : ["iOS","Android"]
-            }
-        ]
-    },
-    
-    "web" : {
-        "languages" :[
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            },
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            },
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            },
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            },
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            },
-            {
-                "name"       : "iOS",
-                "skillLevel" : "7 de 10"
-            }
-         ]
-    },
-    
-    "dataBases" : {
-        "languahes"     : ["SQL"],
-        "skillLevel"    : "Habilidad con bases de datos relacionales: 8 de 10. Habilidad con bases de datos no-relacionales: 6 de 10.",
-        "description"   : "",
-        "extra"         : "",
-        "projects"      : [
-            {
-               "name"      : "",
-               "platform"  : ["Web"]
-            },
-            {
-               "name"      : "",
-               "platform"  : ["Web"]
-            },
-            {
-               "name"      : "",
-               "platform"  : ["Web"]
-            },
-            {
-               "name"      : "",
-               "platform"  : ["Web"]
-             }
-        ]
+    "skills": {
+        "mobile": [
+                   {
+                   "name": "iOS",
+                   "skillDescription": "Desarrollo de aplicaciones para plataformas móviles con más de dos años de experiencia",
+                   "skillLevel": "5",
+                   "featuredSkills": [
+                                      {
+                                      "featuredDescription": "Integración de Cocoapods con Xcode"
+                                      },
+                                      {
+                                      "featuredDescription": "Consumo de APIs propias y de terceros"
+                                      },
+                                      {
+                                      "featuredDescription": "Uso de liberías como AFNetworking,RestKit,Mantle,JSONModel,FMDB, etc.."
+                                      },
+                                      {
+                                      "featuredDescription": "Diseño de interfaces"
+                                      },
+                                      {
+                                      "featuredDescription": "Desarrollo ágil"
+                                      }
+                                      ]
+                   },
+                   {
+                   "name": "Android",
+                   "skillDescription": "Con la intención de portar en algún momento las aplicaciones realizadas para iOS a la plataforma Android.",
+                   "skillLevel": "1",
+                   "featuredSkills": [
+                                      {
+                                      "featuredDescription": "Alto nivel de motivación para aprender Android"
+                                      }
+                                      ]
+                   }
+                   ],
+        "web": [
+                {
+                "name": "PHP",
+                "skillDescription": "Desarrollo con PHP como lenguage académico. Me siento agusto desarrollando con PHP aunque no sea mi lenguage preferido",
+                "skillLevel": "4",
+                "featuredSkills": [
+                                   {
+                                   "featuredDescription": "PHP orientado a objetos"
+                                   },
+                                   {
+                                   "featuredDescription": "Conexión con bases de datos"
+                                   },
+                                   {
+                                   "featuredDescription": "Tabajo con ficheros desde PHP"
+                                   }
+                                   ]
+                },
+                {
+                "name": "HTML & CSS",
+                "skillDescription": "Desarrollo fluído con HTML y CSS",
+                "skillLevel": "4",
+                "featuredSkills": [
+                                   {
+                                   "featuredDescription": "Realización de pruebas con Bootstrap"
+                                   }
+                                   ]
+                },
+                {
+                "name": "Javascript & Node.js",
+                "skillDescription": "Iniciación al desarrollo con Node.js. Desarrollo de programas por iniciativa propia.",
+                "skillLevel": "2",
+                "featuredSkills": [
+                                   {
+                                   "featuredDescription": "Manejo de Sockets con Socket.io"
+                                   },
+                                   {
+                                   "featuredDescription": "Familiarizado con frameworks como Express o Sails.js"
+                                   },
+                                   {
+                                   "featuredDescription": "Programación de varias API rest con Node.js"
+                                   }
+                                   ]
+                },
+                {
+                "name": "Ruby",
+                "skillDescription": "Iniciación al desarrollo con ruby y framework Rail. Programación de scripts para automatizar tareas varias.",
+                "skillLevel": "2",
+                "featuredSkills": [
+                                   {
+                                   "featuredDescription": "Alto nivel de motivación para aprender rails"
+                                   },
+                                   {
+                                   "featuredDescription": "Realización de varias API Rest con Sinatra,Rails,Grape y Rails-API"
+                                   }
+                                   ]
+                }
+                ],
+        "databases": [
+                      {
+                      "name": "SQL",
+                      "skillDescription": "Conocimiento avanzado de motores de bases de datos relacionales. Oracle,PostgresSQL y MySQl",
+                      "skillLevel": "4",
+                      "featuredSkills": [
+                                         {
+                                         "featuredDescription": "Creación de modelo E/R"
+                                         },
+                                         {
+                                         "featuredDescription": "Creación de bases de datos"
+                                         },
+                                         {
+                                         "featuredDescription": "Uso de phpMyAdmin"
+                                         },
+                                         {
+                                         "featuredDescription": "Lenguaje de consultas"
+                                         }
+                                         ]
+                      },
+                      {
+                      "name": "Mongodb",
+                      "skillDescription": "Iniciación al mundo de las bases de datos NO Relaciones",
+                      "skillLevel": "2",
+                      "featuredSkills": [
+                                         {
+                                         "featuredDescription": "Modelado de datos en colleciones y documentos."
+                                         },
+                                         {
+                                         "featuredDescription": "Realización de pruebas combinando Mongodb con Node.js y Rails."
+                                         }
+                                         ]
+                      }
+                      ]
     }
 }

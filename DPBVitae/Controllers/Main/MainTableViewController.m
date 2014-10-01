@@ -7,113 +7,120 @@
 //
 
 #import "MainTableViewController.h"
+#import "CustomMainCell.h"
+
+
+static NSString *CellIdentifier = @"MainCell";
 
 @interface MainTableViewController ()
+
+//
+@property(nonatomic, strong) NSArray *dataSource;
+
+//
+@property(nonatomic, strong) NSArray *iconsSource;
 
 @end
 
 @implementation MainTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Ajustes del TableView
+    [self configureTableView];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Ajusto el Status bar en blanco (light)
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor whiteColor],NSForegroundColorAttributeName,
+                                    [UIColor whiteColor],NSBackgroundColorAttributeName,
+                                    [UIFont fontWithName:@"Montserrat-Regular" size:16.0], NSFontAttributeName,nil];
+    
+    self.navigationController.topViewController.title = @"Currículum Vitae";
+    self.navigationController.navigationBar.barTintColor = [DPBUtils colorWithHexString:@"34495e" alpha:1.0];
+    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
+
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return self.dataSource.count;
 }
 
-/*
+#pragma mark - Table view delegates
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    CustomMainCell *cell = (CustomMainCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+
     // Configure the cell...
+    
+    cell.title.text = self.dataSource[indexPath.row];
+    
+    cell.icon.image = [UIImage imageNamed:self.iconsSource[indexPath.row]];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [self performSegueWithIdentifier:@"profileSegue" sender:nil];
+    }else if (indexPath.row == 1){
+        [self performSegueWithIdentifier:@"experienceSegue" sender:nil];
+    }else if (indexPath.row == 2){
+        [self performSegueWithIdentifier:@"educationSegue" sender:nil];
+    }else if (indexPath.row == 3){
+        [self performSegueWithIdentifier:@"skillsSegue" sender:nil];
+    }else if (indexPath.row == 4){
+        [self performSegueWithIdentifier:@"socialSegue" sender:nil];
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+#pragma mark - Custom Methods
+
+- (void)configureTableView {
+    // Inicializo los arrays con los datos
+    self.dataSource = @[@"PERFIL",@"EXPERIENCIA",@"EDUCACIÓN",@"HABILIDADES",@"PERFIL SOCIAL"];
+    self.iconsSource = @[@"profile-icon",@"experience-icon",@"education-icon",@"skills-icon",@"social-icon"];
+    
+    // Ajusto el color del fondo de la tabla
+    self.tableView.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:240.0/255.0 alpha:1.0];
+    
+    // This will remove extra separators from tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    // Eliminio las líneas que separan las celdas
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.separatorColor = [UIColor colorWithRed:233.0/255.0 green:233.0/255.0 blue:229.0/255.0 alpha:1.0];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
+    return UIStatusBarStyleLightContent;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

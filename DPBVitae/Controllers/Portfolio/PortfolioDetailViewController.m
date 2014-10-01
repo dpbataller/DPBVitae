@@ -14,36 +14,38 @@
 
 @implementation PortfolioDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.nameLabel.text         = self.nameString;
+    self.descriptionLabel.text  = self.descriptionString;
+    self.versionLabel.text      = self.versiontring;
+    self.languageLabel.text     = self.languageString;
+    self.downloadsLabel.text    = self.downloadsString;
+    self.statusLabel.text       = self.statusString;
+    self.platformImage.image    = [UIImage imageNamed:self.platformString];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor whiteColor],NSForegroundColorAttributeName,
+                                    [UIColor whiteColor],NSBackgroundColorAttributeName,
+                                    [UIFont fontWithName:@"Montserrat-Regular" size:16.0], NSFontAttributeName,nil];
+    
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [DPBUtils colorWithHexString:@"34495e" alpha:1.0];
+    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

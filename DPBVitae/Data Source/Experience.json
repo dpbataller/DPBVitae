@@ -1,30 +1,36 @@
- [
+{
+    "experience" :[
     {
-        "company" 		: "Codiapps",
-        "startActiviy" 	: "Enero 2012",
-        "endActivity"	: "Enero 2013",
-        "department"	: "Desarrollador iOS y Web",
-        "description" 	: "Diseño, desarrollo y gestión  de múltiples aplicaciones iOS y web"
+        "companyName" 	 : "Codiapps",
+        "rol"            : "Desarrollador iOS, programador Backend y diseñador.",
+        "startActiviy" 	 : "Ene 2012",
+        "endActivity"	 : "Feb 2013",
+        "department"	 : "Desarrollador iOS y Web",
+        "jobDescription" : "Diseño, desarrollo y gestión  de múltiples aplicaciones iOS y web"
     },
     {
-        "company" 		: "Imaginagroup S.L",
-        "startActiviy" 	: "Diciembre 2011",
-        "endActivity"	: "Enero del 2012",
-        "department"	: "Área de formación",
-        "description" 	: "Programador junior dedicado a labores de formación. Elaboración y maquetación de cursos para iOS, Android, HTML 5, Objective-C, y Java entre otros."
+        "companyName" 	 : "Imaginagroup S.L",
+        "rol"            : "Desarrollador iOS",
+        "startActiviy" 	 : "Dic 2011",
+        "endActivity"	 : "Ene 2012",
+        "department"	 : "Área de formación",
+        "jobDescription" : "Programador junior dedicado a labores de formación. Elaboración y maquetación de cursos para iOS, Android, HTML 5, Objective-C, y Java entre otros."
     },
     {
-        "company" 		: "Ainfor S.L",
-        "startActiviy" 	: "Abril 2010",
-        "endActivity"	: "Mayo 2011",
-        "department"	: "Área de C.A.U",
-        "description" 	: "Técnico encargado del departamento C.A.U (centro de atención al usuario).Gestión de incidencias telefónicas y de las salidas a empresas que requerían la atención  de un técnico especializado por  fallo en sus sistemas informáticos"
+        "companyName" 	 : "Ainfor S.L",
+        "rol"            : "Desarrollador iOS",
+        "startActiviy" 	 : "Abr 2010",
+        "endActivity"	 : "May 2011",
+        "department"	 : "Área de formación",
+        "jobDescription" : "Programador junior dedicado a labores de formación. Elaboración y maquetación de cursos para iOS, Android, HTML 5, Objective-C, y Java entre otros."
     },
     {
-        "company" 		: "Ayuntamiento de Carlet",
-        "startActiviy" 	: "Junio 2009",
-        "endActivity"	: "Septiembre 2009",
-        "department"	: "Dpto. Informática",
-        "description" 	: "Administración tanto del sistema informático como de la infraestructura de red así como el mantenimiento del portal web del consistorio"
+        "companyName" 	 : "Ayuntamiento de Carlet",
+        "rol"            : "Desarrollador iOS",
+        "startActiviy" 	 : "Jun 2009",
+        "endActivity"	 : "Sept 2009",
+        "department"	 : "Dpto. Informática",
+        "jobDescription" : "Administración tanto del sistema informático como de la infraestructura de red así como el mantenimiento del portal web del consistorio"
     }
   ]
+}

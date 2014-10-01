@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DateLabel.h"
+#import "CourseLabel.h"
+#import "DescriptionLabel.h"
+#import "LocationLabel.h"
 
 @interface CustomEducationCell : UITableViewCell
+
+//
+@property (weak, nonatomic) IBOutlet DateLabel *dateLabel;
+
+//
+@property (weak, nonatomic) IBOutlet CourseLabel *courseLabel;
 
 @end

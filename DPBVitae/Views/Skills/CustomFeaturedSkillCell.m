@@ -21,8 +21,13 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+ 
+    // featuredSkillDescription Label
+    self.featuredSkillDescription.textColor = [DPBUtils colorWithHexString:@"1abc9c" alpha:1.0];
+    self.featuredSkillDescription.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

@@ -10,4 +10,22 @@
 
 @interface DPBUtils : NSObject
 
+/**
+ *  <#Description#>
+ *
+ *  @param hex <#hex description#>
+ *
+ *  @return <#return value description#>
+ */
++ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+
+/**
+ *  <#Description#>
+ *
+ *  @param color <#color description#>
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)hexStringFromColor:(UIColor *)color;
+
 @end

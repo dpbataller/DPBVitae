@@ -8,6 +8,14 @@
 
 #import "JSONModel.h"
 
+@protocol FeaturedSkillModel @end
+
+// ----------------------------------------------------------------------------
+//
+//  FeaturedSkillModel
+//
 @interface FeaturedSkillModel : JSONModel
+
+@property (strong, nonatomic) NSString *featuredDescription;
 
 @end

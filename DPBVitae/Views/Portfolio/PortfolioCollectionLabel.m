@@ -10,22 +10,11 @@
 
 @implementation PortfolioCollectionLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (void)awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    // Color de la fuenta y tipografía
+    self.font =  [UIFont fontWithName:@"Montserrat-Regular" size:12];
+    self.textColor = [DPBUtils colorWithHexString:@"34495e" alpha:1.0];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

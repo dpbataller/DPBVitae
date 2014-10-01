@@ -1,63 +1,70 @@
 {
-    
   "education" : [
-  {
-    "starDate"     : "Técnico Superior en Desarrollo de Aplicaciones Web (D.A.W)",
-    "location"     : "I.E.S Sant Vicent Ferrer, Algemesí",
-    "endDate"      : "Septiembre 2011",
-    "education"    : "Marzo 2013"
-  },
-  {
-    "starDate"     : "Técnico Superior en Administración de sistemas (A.S.I)",
-    "location"     : "I.E.S Consuelo Aranda, Alberic",
-    "endDate"      : "Septiembre 2010",
-    "education"    : "Marzo 2011"
-  },
-  {
-    "starDate"     : "Técnico en Explotación de Sistemas Informáticos (E.S.I)",
-    "location"     : "I.E.S Ramón Esteve, Catadau",
-    "endDate"      : "Septiembre 2007",
-    "education"    : "Marzo 2009"
-  },
-  {
-    "starDate"     : "Educación Secundaria Obligatoria (E.S.O)",
-    "location"     : "I.E.S Eduardo Primo Marqués, Carlet",
-    "endDate"      : "A corregir",
-    "education"    : "A corregir"
-  }
+                 {
+                 "startDate" : "Sep 2011",
+                 "endDate"   : "Sep 2013",
+                 "location"  : "I.E.S Sant Vicent Ferrer, Algemesí",
+                 "course"    : "Técnico Superior en Desarrollo de Aplicaciones Web",
+                 "courseDescription" : "Grado superior en Desarrollo de aplicaciones web."
+                 },
+                 {
+                 "startDate" : "Sep 2010",
+                 "endDate"   : "Mar 2011",
+                 "location"  : "I.E.S Consuelo Aranda, Alberic",
+                 "course"    : "Técnico Superior en Administración de sistemas",
+                 "courseDescription" : "Grado superior en Administración de sistemas."
+                 },
+                 {
+                 "startDate" : "Mar 2009",
+                 "endDate"   : "Mar 2009",
+                 "location"  : "I.E.S Ramón Esteve, Catadau",
+                 "course"    : "Técnico en Explotación de Sistemas Informáticos",
+                 "courseDescription" : "Grado medio en explotación de sistemas"
+                 },
+                 {
+                 "startDate" : "Jun 2004",
+                 "endDate"   : "Sep 2002",
+                 "location"  : "I.E.S Eduardo Primo Marqués, Carlet",
+                 "course"    : "Educación Secundaria Obligatoria",
+                 "courseDescription" : "Educación secundatia obligatoria"
+                 }
  ],
-    
-  "additionalQualifications" : [
-  {
-   "year"           : "2011",
-   "location"       : "Málaga",
-   "description"    : "Asistencia al 1er Encuentro de desarrolladores  & creativos  iOS para iPhone e iPad. Conferencias sobre diseño, programación y estrategia de  ventas de aplicaciones para dispositivos iOS."
-  },
-  {
-   "year"           : "2011",
-   "location"       : "Valencia",
-   "description"    : "Conferencia sobre software de backup. Symantec Backup Exec 12.5 con laboratorios prácticos."
-  },
-  {
-   "year"           : "2011",
-   "location"       : "Madrid",
-   "description"    : "Curso intensivo sobre instalación y gestión de Joomla (8 horas).Seminario Google SEO (2 horas)."
-  },
-  {
-   "year"           : "2011",
-   "location"       : "Málaga",
-   "description"    : "Asistencia al 1er Encuentro de desarrolladores  & creativos  iOS para iPhone e iPad. Conferencias sobre diseño, programación y estrategia de  ventas de aplicaciones para dispositivos iOS."
-  },
-  {
-   "year"           : "2009 - 2010",
-   "location"       : "Valencia",
-   "description"    : "Cursos para la certificación Cisco CCNA."
-  },
-  {
-   "year"           : "2006",
-   "location"       : "Valencia",
-   "description"    : "Curso programación y diseño web (300 horas).Período de prácticas realizado en AKELOS MEDIA S.L. (40 horas)"
-  }
+ 
+ "additional" : [
+                 {
+                 "startDate" : "Sep 2011",
+                 "endDate"   : "Sep 2011",
+                 "location"  : "Cero Ideas S.L, Málaga",
+                 "course"    : "Conferencia para desarrolladores iOS",
+                 "courseDescription" : "Asistencia al 1er Encuentro de desarrolladores  & creativos  iOS para iPhone e iPad. Conferencias sobre diseño, programación y estrategia de  ventas de aplicaciones para dispositivos iOS."
+                 },
+                 {
+                 "startDate" : "Sep 2011",
+                 "endDate"   : "Sep 2011",
+                 "location"  : "Ainfor Assesors Informàtics, Valencia",
+                 "course"    : "Curso Symantec Recovery Tools",
+                 "courseDescription" : "Curso sobre software de backup. Symantec Backup Exec 12.5 con laboratorios prácticos."
+                 },
+                 {
+                 "startDate" : "Sep 2011",
+                 "endDate"   : "Sep 2011",
+                 "location"  : "Académia Valengoya, Madrid",
+                 "course"    : "Curso de programacíon Web con Joomla",
+                 "courseDescription" : "Curso intensivo sobre instalación y gestión de Joomla (8 horas). Seminario Google SEO (2 horas)."
+                 },
+                 {
+                 "startDate" : "Sep 2009",
+                 "endDate"   : "Sep 2010",
+                 "location"  : "I.E.S Consuelo Aranda, Valencia",
+                 "course"    : "Certificación CCNA Cisco Systems",
+                 "courseDescription" : "Cursos para la certificación Cisco CCNA."
+                 },                 {
+                 "startDate" : "Sep 2006",
+                 "endDate"   : "Sep 2006",
+                 "location"  : "Oficina de empleo, Carlet",
+                 "course"    : "Curso de programación y diseño web",
+                 "courseDescription" : "Curso programación y diseño web (300 horas).Período de prácticas realizado en AKELOS MEDIA S.L. (40 horas)"
+                 }
+
  ]
-    
 }

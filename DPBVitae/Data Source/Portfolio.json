@@ -1,0 +1,103 @@
+{
+    "mobile": [
+               {
+               "icon" : "farmaribera-icon",
+               "name": "Farmaribera",
+               "projectDescription": "Farmaribera te facilita consultar y localizar las farmacias de guardia de la comarca de la Ribera Alta. Podrás consultar guardias y refuerzos, ubicar en el mapa la posición de la farmacia y hacer uso del GPS.",
+               "version": "1.1",
+               "platform": true,
+               "language": "Objective-C",
+               "backend": "PHP",
+               "downloads": "+5000",
+               "isActive" : false
+               },
+               {
+               "icon" : "awesom-icon",
+               "name": "Awesom List | To Do Tasks",
+               "projectDescription": "Usa Awesome List para recordar todas las cosas que quieras realizar diariamente. Toma nota de cualquier cosa de forma sencilla y elegante, márcala cuando la termines, edítala si necesitas cambiar algo o elimínala si las has completado. Diviértete usando la app con con sus diferentes gestos para manipular las tareas, prueba a insertar tus tareas y agitar el móvil!.",
+               "version": "1.0",
+               "platform": true,
+               "language": "Objective-C",
+               "backend": "SQLite",
+               "downloads": "+5000",
+               "isActive" : true
+               },
+               {
+               "icon" : "avianvet-icon",
+               "name": "Avianvet",
+               "projectDescription": "Avianvet®, nace como una guía sobre las enfermedades más comunes de las aves. Con esta guía los criadores pueden tener una orientación más clara de las patologías que sufren sus aves. El criador aprenderá a reconocer los síntomas claros y saber cuándo debe acudir a su veterinario de confianza.",
+               "version": "1.0",
+               "platform":true,
+               "language": "Objective-C",
+               "backend": "SQLite",
+               "downloads": "+1500",
+               "isActive" : true
+               },
+               {
+               "icon" : "carcenas-icon",
+               "name": "Carcenas",
+               "projectDescription": "Hola soy Cárcenas y estoy aquí para contaros 'mi caso'.Hace más de 20 años, empecé a trabajar en una gran empresa donde me encargaba de manejar el cotarro, vamos, que administraba la pasta. Eran días felices y poco a poco fui ganando amigos en la empresa. A lo largo de este tiempo he conocido a mucha gente importante y todos ellos han hablado muy bien de mi diciendo que soy todo un ejemplo.Os invito a que me conozcáis, prometo contarlo todo y dejaros 'sobrecogidos'.",
+               "version": "1.0",
+               "platform": true,
+               "language": "Objective-C",
+               "backend": "No dispone de Backend",
+               "downloads": "+5000",
+               "isActive" : true
+               },{
+               "icon" : "buenasofertas-icon",
+               "name": "Buenasofertas App",
+               "projectDescription": "La aplicación del portal Buenasofertas.es para iOS, te permitirá encontrar gran variedad de productos nuevos, de segunda y servicios como coches, pisos, ofertas de empleo, ropa para hombres y mujeres, teléfonos móviles y muchos más.Además podrás publicar anuncios gratuítamente en cualquier categoría, modificarlo o eliminarlos desde tu panel de control.",
+               "version": "1.0",
+               "platform": true,
+               "language": "Objective-C",
+               "backend": "PHP, MySQL",
+               "downloads": "100",
+               "isActive" : false
+               }
+               ],
+    "web": [{
+            "icon" : "codiapps-icon",
+            "name": "Codiapps",
+            "projectDescription": "Página web para Codiapps, mi projecto más personal. Nace con el objetivo de oferecer servicios de desarrollo de aplicaciones para móvil y web.",
+            "version": "1.0",
+            "platform": false,
+            "language": "PHP",
+            "backend": "MySQL",
+            "downloads": "+10.000",
+            "isActive" : false
+            },
+            {
+            "icon" : "inmodeya-icon",
+            "name": "Inmodeya Inmobiliaria",
+            "projectDescription": "Inmodeya es el resultado de mi último trabajo web. Es un portal inmobiliario para la compra-venta de inmuebles a inversores chinos. Está traducida a tres idiomas:\n- Chino \n - Ruso \n - Español.",
+            "version": "1.0",
+            "platform": false,
+            "language": "PHP",
+            "backend": "PHP",
+            "downloads": "+4000",
+            "isActive" : true
+            },
+            {
+            "icon" : "buenasofertas-icon",
+            "name": "Buenasofertas Web",
+            "projectDescription": "Buenasofertas se creó con la intención de servir como plataforma de compra-venta de artículos nuevos con un renovado estilo y diferenciación sobre las actuales plataformas del mismo sector.",
+            "version": "1.0",
+            "platform": false,
+            "language": "PHP, MySQL",
+            "backend": "VPS Amazon EC2",
+            "downloads": "+1500",
+            "isActive" : false
+            },
+            {
+            "icon" : "algemesi-icon",
+            "name": "Algemesí Web",
+            "projectDescription": "La colaboración en este proyecto está muy ligado a la aplicación móvil Farmaribera. Algemesíweb es un diario digital de la Ciudad de Algemesí al cual le facilitamos las farmacias de guardia a modo de información relevante para el ciudadano.",
+            "version": "1.0",
+            "platform": false,
+            "language": "\n- PHP \n- Javascript\n - jQuery",
+            "backend": "MySQL",
+            "downloads": "¿?",
+            "isActive" : true
+            }
+               ]
+}

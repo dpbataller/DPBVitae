@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D9134290-EF0C-4C47-8B40-A1518E007301</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DPBVitae</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E223A1F26DABC55D170F4E5AC23E106509C575F</key>
+		<string>https://bitbucket.org/dpbataller/dpbvitae.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DPBVitae.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E223A1F26DABC55D170F4E5AC23E106509C575F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/dpbataller/dpbvitae.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E223A1F26DABC55D170F4E5AC23E106509C575F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E223A1F26DABC55D170F4E5AC23E106509C575F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DPBVitae</string>
+		</dict>
+	</array>
+</dict>
+</plist>

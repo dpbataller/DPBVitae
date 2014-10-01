@@ -1,5 +1,5 @@
 //
-//  User.h
+//  ProfileModel.h
 //  DPBVitae
 //
 //  Created by David Pedrosa on 27/06/14.
@@ -7,60 +7,43 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface ProfileModel : NSObject
+#import <JSONModel/JSONModel.h>
 
 // ----------------------------------------------------------------------------
 //
-//  EducationModel
+//  ProfileModel
 //
 
-//
+@interface ProfileModel : JSONModel
+
+// Nombre completo de la pesona.
 @property(nonatomic,strong) NSString *fullName;
 
-//
+// Edad de la persona.
 @property(nonatomic,strong) NSString *age;
 
-//
+// Fecha de nacimiento de la persona.
 @property(nonatomic,strong) NSString *birthday;
 
-//
+// Dirección de la persona.
 @property(nonatomic,strong) NSString *address;
 
-//
+// Dirección de correo de la persona.
 @property(nonatomic,strong) NSString *email;
 
-//
+// Número de teléfono de la persona.
 @property(nonatomic,strong) NSString *phone;
 
-//
+// Ciudad dónde vive la persona.
 @property(nonatomic,strong) NSString *city;
 
-//
+// Código postal perteneciente al áera del usuario.
 @property(nonatomic,strong) NSString *zip;
 
-//
+// Páis donde reside.
 @property(nonatomic,strong) NSString *country;
 
-//
+// Imágen de perfil de la persona.
 @property(nonatomic,strong) NSString *profile;
-
-/**
- *  Método constructor que crea una instancia de la clase User Model con los parámetros ....
- *
- *  @param data Diccionario con los datos del perfil
- *
- *  @return <#return value description#>
- */
-- (id)initUserWithDictionary:(NSDictionary *)data;
-
-/**
- *  <#Description#>
- *
- *  @param file <#file description#>
- *
- *  @return <#return value description#>
- */
-+ (NSDictionary *)getUserDataFromJSONFIle:(NSString *)file;
 
 @end

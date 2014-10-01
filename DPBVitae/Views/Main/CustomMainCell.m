@@ -30,8 +30,8 @@
     self.backgroundView.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:240.0/255.0 alpha:1.0];
     self.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:240.0/255.0 alpha:1.0];
     
-    self.title.textColor = [UIColor colorWithRed:41.0/255.0 green:128.0/255.0 blue:185.0/255.0 alpha:1.0];
-    self.title.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
+    self.title.textColor = [DPBUtils colorWithHexString:@"2c3e50" alpha:1.0];
+    self.title.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"right-indicator"]];
     self.accessoryView = imageView;

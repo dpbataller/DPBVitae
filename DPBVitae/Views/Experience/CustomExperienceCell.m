@@ -31,7 +31,7 @@
     
     
     // Company Label
-    self.companyName.textColor = [UIColor colorWithRed:211.0/255.0 green:84/255.0 blue:0/255.0 alpha:1.0];
+    self.companyName.textColor = [DPBUtils colorWithHexString:@"c0392b" alpha:1.0];
     self.companyName.font = [UIFont fontWithName:@"Montserrat-Regular" size:17];
 
     // Department Label

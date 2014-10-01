@@ -10,4 +10,7 @@
 
 @interface CustomSkillCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *languageLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *skillLevel;
+
 @end

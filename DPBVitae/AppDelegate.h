@@ -12,4 +12,14 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+/**
+ *  Muestra las fuentas instaladas en el sistema
+ */
+- (void)showFonts;
+
+/**
+ *  Cambia el estilo del TabbarController añadiendo los títulos y los iconons seleccionados
+ */
+- (void)customizeTabbar;
+
 @end

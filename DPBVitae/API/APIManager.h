@@ -12,6 +12,7 @@
 #import "ExperienceModel.h"
 #import "EducationModel.h"
 #import "SkillModel.h"
+#import "PortfolioModel.h"
 
 // ----------------------------------------------------------------------------
 //
@@ -21,7 +22,8 @@
 typedef void (^profileCompletionBlock)(ProfileModel *profile, NSError *error);
 typedef void (^experienceCompletionBlock)(NSArray *experience, NSError *error);
 typedef void (^educationCompletionBlock)(NSDictionary *education, NSError *error);
-typedef void (^skillsCompletionBlock)(NSMutableArray *skills, NSError *error);
+typedef void (^skillsCompletionBlock)(NSDictionary *skills, NSError *error);
+typedef void (^portfolioCompletionBlock)(NSDictionary *portfolio, NSError *error);
 
 @interface APIManager : NSObject
 
@@ -88,5 +90,12 @@ typedef void (^skillsCompletionBlock)(NSMutableArray *skills, NSError *error);
  *  @param completionBlock <#completionBlock description#>
  */
 - (void)getSkillsDataWithcompletionHandler:(skillsCompletionBlock)completionBlock;
+
+/**
+ *  <#Description#>
+ *
+ *  @param completionBlock <#completionBlock description#>
+ */
+- (void)getPortfolioWithcompletionHandler:(portfolioCompletionBlock)completionBlock;
 
 @end

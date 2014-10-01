@@ -7,31 +7,33 @@
 //
 
 #import "ExperienceTableViewController.h"
+#import "CustomExperienceCell.h"
+
+#import "APIManager.h"
+#import "ExperienceModel.h"
+
+static NSString *CellIdentifier = @"ExperienceCell";
 
 @interface ExperienceTableViewController ()
-
+@property(nonatomic,strong) NSArray *experienceArray;
 @end
 
 @implementation ExperienceTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self configureTableView];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.topViewController.title = @"Experiencia Profesional";
+    self.navigationController.navigationBar.barTintColor = [DPBUtils colorWithHexString:@"e74c3c" alpha:1.0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,76 +46,56 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return self.experienceArray.count;
+
 }
 
-/*
+#pragma mark - Table view delegates
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    CustomExperienceCell *cell = (CustomExperienceCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    ExperienceModel *model = self.experienceArray[indexPath.row];
+    
+    cell.dateLabel.text         = [NSString stringWithFormat:@"%@ - %@",model.startActiviy,model.endActivity];
+    cell.companyName.text       = model.companyName;
+    cell.departmentLabel.text   = [NSString stringWithFormat:@"[%@]",model.department];
+    cell.jobDescription.text    = model.jobDescription;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 200.0;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+#pragma mark - Custom Methods
+
+- (void)configureTableView {
+    // This will remove extra separators from tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    // Data sources
+    [[APIManager sharedAPIManager] getExperienceDataUsingKey:@"experience" completionHandler:^(NSArray *experience, NSError *error) {
+        self.experienceArray = experience;
+    }];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

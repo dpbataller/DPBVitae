@@ -10,22 +10,14 @@
 
 @implementation AppStatusLabel
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.textColor = [DPBUtils colorWithHexString:@"95A5A6" alpha:1.0];
+
+    self.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
+    
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

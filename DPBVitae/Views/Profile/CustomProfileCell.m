@@ -23,14 +23,15 @@
 {
     // Initialization code
     
+    // Blue View
     self.backgroundView.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:240.0/255.0 alpha:1.0];
     self.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:240.0/255.0 alpha:1.0];
     
     self.itemLabel.textColor = [UIColor colorWithRed:70.0/255.0 green:192.0/255.0 blue:242.0/255.0 alpha:1.0];
-    self.itemLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
+    self.itemLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
     
     self.contentLabel.textColor = [UIColor colorWithRed:97.0/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
-    self.contentLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
+    self.contentLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:15];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

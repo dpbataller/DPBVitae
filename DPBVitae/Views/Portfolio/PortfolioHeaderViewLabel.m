@@ -10,22 +10,18 @@
 
 @implementation PortfolioHeaderViewLabel
 
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+        // Color de la fuenta y tipografía
+        self.font =  [UIFont fontWithName:@"Montserrat-Regular" size:17];
+        self.textColor = [DPBUtils colorWithHexString:@"336E7B" alpha:1.0];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -10,22 +10,9 @@
 
 @implementation CourseLabel
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+-(void)awakeFromNib {
+    self.textColor = [DPBUtils colorWithHexString:@"7d4392" alpha:1.0];
+    self.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
