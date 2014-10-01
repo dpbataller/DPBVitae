@@ -1,0 +1,94 @@
+{
+    "mobile" : {
+        "languages" : [
+            {
+               "name"       : "iOS",
+               "skillLevel" : "7 de 10"
+            }
+        ],
+        "experience"        : "3 años de experiencia desarrollando apps nativas para plataforma iOS",
+        "description"       : "aosdjfklasjdflkjasdlfjasdlkjfalskdjflkasjdlfkjasdlkjfalksdjflkasjdkfjalsdkjfla,aklsdjflksjdflkjsd",
+        "extra": [
+            {
+                "name" : "Licencia de desarrollo iOS",
+                "description" : "Soy desarrollador activo para la plataforma iOS de Apple teniendo en propiedad la licencia de desarrollador correspondiente."
+            },
+            {
+               "name" : "Licencia de desarrollo iOS",
+               "description" : "Soy desarrollador activo para la plataforma iOS teniendo en propiedad la licencia de desarrollador correspondiente."
+            }
+        ],
+        "projects" : [
+            {
+                "name"      : "Farmaribera | Farmacias de guardias",
+                "platform"  : ["iOS","Android"]
+            },
+            {
+               "name"      : "Awesom List | Todo Tasks",
+               "platform"  : ["iOS","Android"]
+            },
+            {
+               "name"      : "Avianvet",
+               "platform"  : ["iOS","Android"]
+            },
+            {
+               "name"      : "Cárcenas",
+               "platform"  : ["iOS","Android"]
+            }
+        ]
+    },
+    
+    "web" : {
+        "languages" :[
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            },
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            },
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            },
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            },
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            },
+            {
+                "name"       : "iOS",
+                "skillLevel" : "7 de 10"
+            }
+         ]
+    },
+    
+    "dataBases" : {
+        "languahes"     : ["SQL"],
+        "skillLevel"    : "Habilidad con bases de datos relacionales: 8 de 10. Habilidad con bases de datos no-relacionales: 6 de 10.",
+        "description"   : "",
+        "extra"         : "",
+        "projects"      : [
+            {
+               "name"      : "",
+               "platform"  : ["Web"]
+            },
+            {
+               "name"      : "",
+               "platform"  : ["Web"]
+            },
+            {
+               "name"      : "",
+               "platform"  : ["Web"]
+            },
+            {
+               "name"      : "",
+               "platform"  : ["Web"]
+             }
+        ]
+    }
+}
